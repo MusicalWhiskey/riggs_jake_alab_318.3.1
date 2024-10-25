@@ -29,28 +29,28 @@ ${time.toLocaleTimeString()}: Received a ${req.method} request to ${req.url}.`
 });
 
 
-const apiKeys = process.env["API-KEYS"]
+// const apiKeys = process.env["API-KEYS"]
 
-//API-KEY Middleware
-// Bouncer
-app.use('/api', (req, res, next) => {
-  const key = req.query["api-key"]
+// //API-KEY Middleware
+// // Bouncer
+// app.use('/api', (req, res, next) => {
+//   const key = req.query["api-key"]
 
-  // Check for the absence of a key
-  if (!key) {
-    res.status(400).json({error: "API Key Required"})
-    return
-  }
+//   // Check for the absence of a key
+//   if (!key) {
+//     res.status(400).json({error: "API Key Required"})
+//     return
+//   }
 
-  // Check for key validity
-  if (apiKeys.indexOf(key) === - 1) {
-    res.status(401).json({error: "Invalid API Key"})
-    return
-  }
+//   // Check for key validity
+//   if (apiKeys.indexOf(key) === - 1) {
+//     res.status(401).json({error: "Invalid API Key"})
+//     return
+//   }
 
-  req.key = key
-  next()
-})
+//   req.key = key
+//   next()
+// })
 
 //Router Set Up
 app.use("/api/users", usersRouter)
