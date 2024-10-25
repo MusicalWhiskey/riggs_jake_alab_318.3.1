@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   const { name, comment } = req.body;
   if (!name || !comment) {
-    return res.status(400).json({ error: 'Name and comment are required.' });
+    return res.status(400).json({ error: 'Name (or ID) and Comment needed.' });
   }
   const newComment = { name, comment, date: new Date() };
   comments.push(newComment);
