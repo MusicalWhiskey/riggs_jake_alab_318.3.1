@@ -9,7 +9,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "Follow the steps below to set up the project and get it running locally:",
   "dependencies": {
     "dotenv": "^16.4.5",
     "express": "^4.21.1"
